@@ -20,6 +20,12 @@ p {
     margin-top: 15px;
 }
 
+#desc {
+	display: block;
+	color: #a3a3a3;
+	padding-bottom: 10px;
+}
+
 #attention {
     color: red;
     margin-left: 0%;
