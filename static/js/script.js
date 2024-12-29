@@ -17,7 +17,8 @@ function result() {
 
     var firstExpoRate = 900/15;
     var secondExpoRate = 2250/40;
-    var thirdexpoRate = 4800/120;
+    var thirdExpoRate = 4800/120;
+    var fourthExpoRate = 9000/300;
 
     var guildmates = document.getElementById("guildmates").value
 
@@ -35,6 +36,10 @@ function result() {
     if (document.getElementById("third-expo").checked) {
         cpg += 4800/guildmates;
     }
+    if (document.getElementById("fourth-expo").checked) {
+        cpg += 9000/guildmates;
+    }
+
     reset(false)
     document.getElementById("daily-rate").value = Math.floor(cpg);
 
@@ -63,6 +68,9 @@ function result() {
         document.getElementById("to-second-expo").value = Math.round((coinsToAcquire / secondExpoRate + Number.EPSILON) * 100) / 100;
     }
     if (document.getElementById("third-expo").checked) {
-        document.getElementById("to-third-expo").value = Math.round((coinsToAcquire / thirdexpoRate + Number.EPSILON) * 100) / 100;
+        document.getElementById("to-third-expo").value = Math.round((coinsToAcquire / thirdExpoRate + Number.EPSILON) * 100) / 100;
+    }
+    if (document.getElementById("fourth-expo").checked) {
+        document.getElementById("to-fourth-expo").value = Math.round((coinsToAcquire / fourthExpoRate + Number.EPSILON) * 100) / 100;
     }
 }

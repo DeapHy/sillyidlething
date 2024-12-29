@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content=
 "width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="static/css/style.css">
 	<title>Калькулятор для больших заказов</title>
 </head>
 
@@ -55,6 +55,8 @@
                     <label>Второй заказ</label><br>
                     <input id="third-expo" type="checkbox" onclick="result()" checked>
                     <label>Третий заказ</label><br>
+                    <input id="fourth-expo" type="checkbox" onclick="result()" checked>
+                    <label>Четвертый заказ</label><br>
 
                     <label id="error"></label>
 
@@ -71,6 +73,8 @@
                     <input type="text" id="to-second-expo" readonly><br>
                     <label>Сила для третьего заказа</label>
                     <input type="text" id="to-third-expo" readonly><br>
+                    <label>Сила для четвертого заказа</label>
+                    <input type="text" id="to-fourth-expo" readonly><br>
                     <p id="attention">
                         Обрати внимание на следующие моменты:
                     </p>
@@ -88,7 +92,7 @@
 			</div>
 		</main>
 	</div>
-	<script src="script.js"></script>
+	<script src="static/js/script.js"></script>
 </body>
 
 </html>
