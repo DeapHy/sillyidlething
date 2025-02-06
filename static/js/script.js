@@ -5,6 +5,7 @@ function reset(error) {
     document.getElementById("to-first-expo").value = ""
     document.getElementById("to-second-expo").value = ""
     document.getElementById("to-third-expo").value = ""
+    document.getElementById("to-fourth-expo").value = ""
 
     if (!error) {
         document.getElementById("error").innerHTML = ""
