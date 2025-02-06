@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=
+"width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="static/css/style.css">
+	<title>Калькулятор для больших заказов</title>
+</head>
+
+<body>
+	<div id="app">
+		<header>
+			<h1>
+				Приветствую, Пробужденный!
+			</h1>
+			<p>
+				Данный сайт был сделан специально для подсчета
+                количества силы, необходимой для большого заказа. 
+                Работает это довольно просто, вот небольшая инструкция
+            </p>
+            <li>
+                Введи количество участников в гильдии
+            </li>
+            <li>
+                Если ты хочешь посчитать, какое количество мощи
+                должно быть у твоих соратников, чтобы получить ежедневную норму монет,
+                введи, сколько монет ты уже получил от заказа(-ов), в котором(-ых) 
+                ты участвовал
+            </li>
+            <p>
+                Галочки "Первый заказ", "Второй заказ" и "Третий заказ" сделаны на случай,
+                если нужно расчитать количество не для трех заказов, а, к примеру, для двух
+            </p>
+		</header>
+		<main>
+			<div id="content">
+                <h2>Исходные данные</h2>
+                <div id="input-block">
+                    <label>Количество участников</label>
+                    <input id="guildmates" type="text" onchange="result()"><br>
+                    <label>Полученное количество монет</label>
+                    <input id="acquired-coins" type="text" onchange="result()" value="0"><br>
+                    <label id="desc">
+                        Количество полученных в заказе(-ах) монет указывается 
+                        за сегодняшний день. Заполнять данное поле следует в случае, если 
+                        необходимо расчитать количество мощи для набора ежедневной нормы монет
+                        для конкретного участика. Во всех остальных случаях - оставлять в поле
+                        значение 0
+                    </label><br>
+                    <input id="first-expo" type="checkbox" onclick="result()" checked>
+                    <label>Первый заказ</label><br>
+                    <input id="second-expo" type="checkbox" onclick="result()" checked>
+                    <label>Второй заказ</label><br>
+                    <input id="third-expo" type="checkbox" onclick="result()" checked>
+                    <label>Третий заказ</label><br>
+                    <input id="fourth-expo" type="checkbox" onclick="result()" checked>
+                    <label>Четвертый заказ</label><br>
+
+                    <label id="error"></label>
+
+                </div>
+                <h2>Результат</h2>
+                <div id="result-block">
+                    <label>Ограничение монет на участника</label>
+                    <input type="text" id="daily-rate" readonly><br>
+                    <label>Необходимо добрать монет</label>
+                    <input type="text" id="required-coins" readonly><br>
+                    <label>Сила для первого заказа</label>
+                    <input type="text" id="to-first-expo" readonly><br>
+                    <label>Сила для второго заказа</label>
+                    <input type="text" id="to-second-expo" readonly><br>
+                    <label>Сила для третьего заказа</label>
+                    <input type="text" id="to-third-expo" readonly><br>
+                    <label>Сила для четвертого заказа</label>
+                    <input type="text" id="to-fourth-expo" readonly><br>
+                    <p id="attention">
+                        Обрати внимание на следующие моменты:
+                    </p>
+                    <li id="att-li">
+                        Данные числа указаны в МИЛЛИОНАХ
+                    </li>
+                    <li id="att-li">
+                        Числа показывают, сколько силы тебе нужно отправить в
+                        ОПРЕДЕЛЕННЫЙ заказ, чтобы "добить" до ежедневной нормы.
+                        Иными словами, тебе не нужно отправлять в каждый из 
+                        заказов указанное количество силы - достаточно выбрать
+                        один и отправить туда соратников. И все :D
+                    </li>
+                </div>
+			</div>
+		</main>
+	</div>
+	<script src="static/js/script.js"></script>
+</body>
+
+</html>
