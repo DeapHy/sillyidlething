@@ -6,6 +6,7 @@ function reset(error) {
     document.getElementById("to-second-expo").value = ""
     document.getElementById("to-third-expo").value = ""
     document.getElementById("to-fourth-expo").value = ""
+    document.getElementById("to-fifth-expo").value = ""
 
     if (!error) {
         document.getElementById("error").innerHTML = ""
@@ -20,6 +21,7 @@ function result() {
     var secondExpoRate = 2250/40;
     var thirdExpoRate = 4800/120;
     var fourthExpoRate = 9000/300;
+    var fifthExpoRate = 14400/525
 
     var guildmates = document.getElementById("guildmates").value
 
@@ -40,6 +42,9 @@ function result() {
     if (document.getElementById("fourth-expo").checked) {
         cpg += 9000/guildmates;
     }
+    if (document.getElementById("fifth-expo").checked) {
+        cpg += 14400/guildmates;
+    }
 
     reset(false)
     document.getElementById("daily-rate").value = Math.floor(cpg);
@@ -47,7 +52,7 @@ function result() {
     var acquiredCoins = document.getElementById("acquired-coins").value;
 
     if ((acquiredCoins < 0) || (guildmates < 0)) {
-        document.getElementById("error"),innerHTML = "Нельзя вводить отрицательные числа :P"
+        document.getElementById("error").innerHTML = "Нельзя вводить отрицательные числа :P"
         reset(true)
         return
     }
@@ -73,5 +78,8 @@ function result() {
     }
     if (document.getElementById("fourth-expo").checked) {
         document.getElementById("to-fourth-expo").value = Math.round((coinsToAcquire / fourthExpoRate + Number.EPSILON) * 100) / 100;
+    }
+    if (document.getElementById("fifth-expo").checked) {
+        document.getElementById("to-fifth-expo").value = Math.round((coinsToAcquire / fifthExpoRate + Number.EPSILON) * 100) / 100;
     }
 }
